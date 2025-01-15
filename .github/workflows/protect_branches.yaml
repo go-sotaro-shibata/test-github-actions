@@ -14,15 +14,9 @@ jobs:
       contents: write # 必要な権限（リポジトリの内容への書き込み）
 
     steps:
-      - name: Set up GitHub CLI
-        uses: cli/gh-actions@v2 # GitHub CLIのセットアップ
-
-      - name: Set up GitHub repository
-        uses: actions/checkout@v3 # リポジトリのコードをチェックアウト
-
       - name: Protect branch from deletion
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GITHUB_TOKENを使用
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
