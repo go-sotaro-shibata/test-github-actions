@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read # リポジトリ内容の読み取り権限
+      actions: read # ワークフローに関する情報の読み取り権限
+      issues: read # イシュー関連の情報の読み取り権限
 
     steps:
       - name: Protect branch from deletion
@@ -23,9 +25,3 @@ jobs:
           echo "token: ${{secrets.GITHUB_TOKEN}}"
 
           gh api /user
-
-          # gh api \
-          #   -X PUT \
-          #   -H "Accept: application/vnd.github+json" \
-          #   /repos/${{ github.repository }}/branches/${BRANCH_NAME}/protection \
-          #   -f allow_deletions=false
