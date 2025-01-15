@@ -10,13 +10,7 @@ jobs:
   protect-branch:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write # リポジトリの内容への書き込み権限
-      issues: write # イシュー関連の情報の書き込み権限
-      pull-requests: write # プルリクエストに関する情報の書き込み権限
-      actions: write # ワークフロー実行に関する書き込み権限
-      checks: write # チェックの書き込み権限
-      deployments: write # デプロイメント情報への書き込み権限
+    permissions: write-all
 
     steps:
       - name: Protect branch from deletion
