@@ -20,6 +20,7 @@ jobs:
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
+          echo "token: ${{secrets.GITHUB_TOKEN}}"
 
           # gh api \
           #   -X PUT \
