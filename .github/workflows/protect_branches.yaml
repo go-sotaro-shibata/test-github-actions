@@ -22,6 +22,8 @@ jobs:
           echo "Protecting branch: $BRANCH_NAME from deletion"
           echo "token: ${{secrets.GITHUB_TOKEN}}"
 
+          gh api /user
+
           # gh api \
           #   -X PUT \
           #   -H "Accept: application/vnd.github+json" \
