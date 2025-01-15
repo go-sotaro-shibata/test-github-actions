@@ -11,14 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read # リポジトリ内容の読み取り権限
-      actions: read # ワークフローに関する情報の読み取り権限
-      issues: read # イシュー関連の情報の読み取り権限
+      contents: write # リポジトリ内容の書き込み権限
 
     steps:
       - name: Protect branch from deletion
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_KEY }}
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
