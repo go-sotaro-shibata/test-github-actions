@@ -10,6 +10,9 @@ jobs:
   protect-branch:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write # 必要な権限を付与
+
     steps:
       - name: Set up GitHub CLI
         uses: actions/checkout@v3
