@@ -23,4 +23,8 @@ jobs:
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
 
-          gh api /repos/${{ github.repository }}
+          gh api \
+          -X PUT \
+          -H "Accept: application/vnd.github+json" \
+          /repos/${{ github.repository }}/branches/${BRANCH_NAME}/protection \
+          -f allow_deletions=false
