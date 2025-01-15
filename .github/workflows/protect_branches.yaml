@@ -10,9 +10,6 @@ jobs:
   protect-branch:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write # リポジトリの内容への書き込み権限
-
     steps:
       - name: Protect branch from deletion
         env:
