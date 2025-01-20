@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Protect branch from deletion
         env:
-          GITHUB_TOKEN: ${{ secrets.PALERMO_BITRISE_GITHUB_PAT }}
+          GITHUB_TOKEN: ${{ secrets.EDIT_BRANCH_RULES_SECRET }}
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
