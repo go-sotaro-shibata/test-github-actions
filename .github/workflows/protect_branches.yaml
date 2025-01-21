@@ -19,13 +19,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.EDIT_BRANCH_RULES_SECRET }}
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
-          echo "Protecting branch: $BRANCH_NAME from deletion"
+          OWNER=${{ github.repository_owner }}
+          REPO=${{ github.event.repository.name }}
+          echo "Protecting branch: $BRANCH_NAME, owner: $OWNER, repo: $REPO"
 
           gh api \
             --method PUT \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/OWNER/REPO/branches/${BRANCH_NAME}/protection \
+            /repos/${OWNER}/${REPO}/branches/${BRANCH_NAME}/protection \
             -f "required_status_checks.strict=false" \
             -f "required_status_checks.contexts=[]" \
             -f "enforce_admins=true" \
