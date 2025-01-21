@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Protect branch from deletion
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EDIT_BRANCH_RULES_SECRET }}
         run: |
           BRANCH_NAME=${GITHUB_REF#refs/heads/}
           echo "Protecting branch: $BRANCH_NAME from deletion"
