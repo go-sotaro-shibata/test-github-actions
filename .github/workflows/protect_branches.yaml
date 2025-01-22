@@ -38,10 +38,11 @@ jobs:
       #       -f "restrictions.teams=[]" \
       #       -f "restrictions.apps=[]"
       #       # -f "allow_deletions=false"
-      - name: toronto-cli install & start
-        uses: MobilityTechnologiesActions/internal-tools/toronto-cli@v0
-        with:
-          mot-toronto-token: ${{ secrets.MOT_TORONTO_TOKEN }}
+
+      # - name: toronto-cli install & start
+      #   uses: MobilityTechnologiesActions/internal-tools/toronto-cli@v0
+      #   with:
+      #     mot-toronto-token: ${{ secrets.MOT_TORONTO_TOKEN }}
 
       - name: Create branch protection
         uses: actions/github-script@v6
