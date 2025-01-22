@@ -28,7 +28,7 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             /repos/${OWNER}/${REPO}/branches/${BRANCH_NAME}/protection \
-            -F "required_status_checks.strict=true" \
+            -F "required_status_checks.strict=false" \
             -f "required_status_checks.contexts=continuous-integration/travis-ci" \
             -F "enforce_admins=true" \
             -F "required_pull_request_reviews[dismiss_stale_reviews]=false" \
