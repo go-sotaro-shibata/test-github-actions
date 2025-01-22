@@ -33,7 +33,7 @@ jobs:
             -F "enforce_admins=true" \
             -F "required_pull_request_reviews[dismiss_stale_reviews]=false" \
             -F "required_pull_request_reviews[require_code_owner_reviews]=false" \
-            # -F "required_pull_request_reviews[required_approving_review_count]=1" \
+            -F "required_pull_request_reviews[required_approving_review_count]=1" \
             # -f "restrictions[users[]]=[]" \
             # -f "restrictions[teams[]]=[]" \
             # -f "restrictions[apps[]]=false" \
