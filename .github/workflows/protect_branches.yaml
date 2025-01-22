@@ -47,7 +47,7 @@ jobs:
       - name: Create branch protection
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.BRANCH_PROTECTION_SECRETS }}
+          github-token: ${{ secrets.EDIT_BRANCH_RULES_SECRET }}
           script: |
             const branch = context.payload.ref;
 
