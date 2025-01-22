@@ -5,6 +5,7 @@ on:
     branches:
       - 'hotfix/**'
       - 'release/**'
+      - 'develop/**'
 
 jobs:
   protect-branch:
@@ -13,6 +14,7 @@ jobs:
     permissions: write-all
 
     steps:
+      # 自前で動かせなかったやつ
       # - uses: actions/checkout@v4
       # - name: Protect branch from deletion
       #   env:
@@ -22,7 +24,6 @@ jobs:
       #     OWNER=${{ github.repository_owner }}
       #     REPO=${{ github.event.repository.name }}
       #     echo "Protecting branch: $BRANCH_NAME, owner: $OWNER, repo: $REPO"
-
       #     gh api \
       #       --method PUT \
       #       -H "Accept: application/vnd.github+json" \
@@ -39,6 +40,7 @@ jobs:
       #       -f "restrictions.apps=[]"
       #       # -f "allow_deletions=false"
 
+      # userAppでは使用していた
       # - name: toronto-cli install & start
       #   uses: MobilityTechnologiesActions/internal-tools/toronto-cli@v0
       #   with:
