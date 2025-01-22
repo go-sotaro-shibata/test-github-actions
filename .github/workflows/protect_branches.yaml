@@ -13,7 +13,7 @@ jobs:
     permissions: write-all
 
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       - name: Protect branch from deletion
         env:
           GITHUB_TOKEN: ${{ secrets.EDIT_BRANCH_RULES_SECRET }}
