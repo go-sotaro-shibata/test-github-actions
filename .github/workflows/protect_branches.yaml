@@ -34,7 +34,10 @@ jobs:
             -F "required_pull_request_reviews[dismiss_stale_reviews]=false" \
             -F "required_pull_request_reviews[require_code_owner_reviews]=false" \
             -F "required_pull_request_reviews[required_approving_review_count]=1" \
-            -f "restrictions.users=[]" \
-            -f "restrictions.teams=[]" \
-            -f "restrictions.apps=false" \
-            -f "allow_deletions=false"
+            -f "restrictions[users[]]=octocat"
+            -f "restrictions[teams[]]=justice-league"
+            -f "restrictions[apps[]]=super-ci"
+            # -f "restrictions.users=[]" \
+            # -f "restrictions.teams=[]" \
+            # -f "restrictions.apps=false" \
+            # -f "allow_deletions=false"
