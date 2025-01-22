@@ -18,7 +18,6 @@ jobs:
 
       - name: Create branch protection
         uses: actions/github-script@v6
-        if: startsWith(github.ref_name, 'topic/')
         with:
           github-token: ${{ secrets.BRANCH_PROTECTION_SECRETS }}
           script: |
