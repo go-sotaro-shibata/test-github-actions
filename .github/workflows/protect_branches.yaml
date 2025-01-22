@@ -36,5 +36,5 @@ jobs:
             -F "required_pull_request_reviews[required_approving_review_count]=1" \
             -f "restrictions.users=[]" \
             -f "restrictions.teams=[]" \
-            -f "restrictions.apps=[]" \
+            -f "restrictions.apps=[]"
             # -f "allow_deletions=false"
